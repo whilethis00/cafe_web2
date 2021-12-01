@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<!--    <META HTTP-EQUIV="refresh" CONTENT="15">-->
+    <title>카페잇다</title>
+
+
+
+    <style>
+        *{
+            /*margin:0;padding:0;*/
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .wrap{
+            /*background-color: #3aff67;*/
+            width: 100%;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 5%;
+        }
+        .header{
+            /*background-color: #1CBDAB;*/
+        }
+        .logo{
+            width: 30%;
+            display: block;
+            margin: auto ;
+        }
+        .main-tittle-box{
+            padding-top: 5%;
+            margin-bottom: 5%;
+        }
+        .collabo{
+            font-size: 15px;
+            text-align: right;
+        }
+        .img{
+            width: 100%;
+        }
+
+        .main{
+            width: 100%;
+        }
+        .reset{
+            display: block;
+            float: right;
+            width: 7%;
+            border: 0.1px;
+            border-style: solid;
+            margin-right: 5%;
+            margin-bottom: 3%;
+            z-index: 1;
+        }
+        .seat-now{
+            font-size: 20px
+        }
+
+
+
+    </style>
+
+    <script>
+        let today = new Date();
+        let hours = today.getHours(); // 시
+        let minutes = today.getMinutes()-1;  // 분
+        if (today.getMinutes()==0){
+            hours=hours-1;
+            minutes=59;
+        }
+
+        function reset(){
+            location.reload();
+        }
+
+    </script>
+</head>
+
+<body >
+    <div class="wrap">
+        <div class="header">
+            <img class="logo" src="img/로고.png">
+            <div class="main-tittle-box">
+                <h1 style="font-size: 20px">자리를 알려주는 <br>
+                    <b><span style="color:#1CBDAB">카페잇다</span></b>입니다
+                </h1>
+                        <h1 class="collabo"> 카페잇다 X 중앙대 linc+ 사업단 </h1>
+
+                <hr>
+            </div>
+        </div>
+        <div class="main">
+            <h1 class="seat-now">
+                <b> 좌석 사용 현황</b> <br>
+            </h1>
+                <script>
+                    document.write("(기준 시각: "+hours + ':' + minutes+')');
+                </script>
+            <h1 id="update-time">  </h1>
+            <img id="reset" onclick="reset()" class="reset" src="img/arrows-circle.png" alt="my">
+            <iframe class="floorplan" src="floorplan.html" width="100%" height="550px" style="border:0"> </iframe>
+
+
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
